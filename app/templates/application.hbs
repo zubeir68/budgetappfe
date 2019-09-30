@@ -1,11 +1,11 @@
 <div class="ui container">
   <br>
   <br>
-  <h1 class="ui header">Explosive diarhhea</h1>
-  <br>
-  <button class="ui circular icon primary button" {{action (mut newCat) true}}><i class="plus icon"></i></button>
+  <h1 class="ui header" style="color: white">Explosive diarhhea</h1>
+  <button class="ui circular icon inverted white button" {{action (mut newCat) true}}><i class="plus icon"></i></button> <br> <br>
   {{#if newCat}}
 	  <div class="ui black segment">
+      <button class="ui tiny inverted circular red icon button" {{action (mut newCat) false}}> <i class="angle left icon"></i> </button> <br><br>
 			<div class="ui form">
 				<div class="ui required field">
 					<label for="">Name</label>
@@ -21,7 +21,11 @@
 			</div>
 		</div>
   {{/if}}
-  {{#each model as |category|}}
-	  <CatSegment  @category={{category}}/> <br>
-  {{/each}}
+  <div style="height: 800px">
+    {{#ember-scrollable autoHide=false}}
+      {{#each model as |category|}}
+	      <CatSegment  @category={{category}}/> <br>
+      {{/each}}
+    {{/ember-scrollable}}
+  </div>
 </div>
