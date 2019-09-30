@@ -1,5 +1,27 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="ui container">
+  <br>
+  <br>
+  <h1 class="ui header">Explosive diarhhea</h1>
+  <br>
+  <button class="ui circular icon primary button" {{action (mut newCat) true}}><i class="plus icon"></i></button>
+  {{#if newCat}}
+	  <div class="ui black segment">
+			<div class="ui form">
+				<div class="ui required field">
+					<label for="">Name</label>
+					{{input value=newName type="text"}}
+				</div>
+				<div class="ui required field">
+					<label for="">Max</label>
+					{{input value=newMax type="number"}}
+				</div>
+				<div class="ui field">
+					<button class="ui inverted green button" {{action "new"}}><i class="save icon"></i>Save</button>
+				</div>
+			</div>
+		</div>
+  {{/if}}
+  {{#each model as |category|}}
+	  <CatSegment  @category={{category}}/> <br>
+  {{/each}}
+</div>
