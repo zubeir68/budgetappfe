@@ -24,7 +24,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.host = 'http://localhost:3000'
+    ENV.host = 'https://enigmatic-dawn-23554.herokuapp.com/'
 
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -46,6 +46,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.host = 'https://enigmatic-dawn-23554.herokuapp.com/'
     // here you can enable a production-specific feature
   }
 
